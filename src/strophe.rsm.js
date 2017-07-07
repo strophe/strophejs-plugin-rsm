@@ -1,34 +1,7 @@
-// http://xmpp.org/extensions/xep-0059.html
-
-(function (root, factory) {
-    if (typeof define === 'function' && define.amd) {
-        // AMD. Register as an anonymous module.
-        define("strophe.rsm", [
-            "strophe"
-        ], function (Strophe) {
-            factory(
-                Strophe.Strophe,
-                Strophe.$build,
-                Strophe.$iq ,
-                Strophe.$msg,
-                Strophe.$pres
-            );
-            return Strophe;
-        });
-    } else {
-        // Browser globals
-        factory(
-            root.Strophe,
-            root.$build,
-            root.$iq ,
-            root.$msg,
-            root.$pres
-        );
-    }
-}(this, function (Strophe, $build, $iq, $msg, $pres) {
+import { $build, Strophe } from 'strophe.js';
 
 Strophe.addNamespace('RSM', 'http://jabber.org/protocol/rsm');
-   
+
 Strophe.RSM = function(options) {
   this.attribs = ['max', 'first', 'last', 'after', 'before', 'index', 'count'];
 
@@ -77,4 +50,3 @@ Strophe.RSM.prototype = {
     }
   }
 };
-}));
