@@ -2,8 +2,10 @@
   "name": "strophejs-plugin-rsm",
   "version": "0.0.1",
   "description": "A strophe.js plugin for XEP-0059 Result Set Management",
-  "main": "strophe.rsm.js",
+  "main": "lib/strophe.rsm.js",
   "scripts": {
+    "build": "rollup src/strophe.rsm.js -f umd -g strophe.js:window -o lib/strophe.rsm.js -m",
+    "prepublish": "npm run --silent build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,5 +23,11 @@
   "bugs": {
     "url": "https://github.com/strophe/strophejs-plugin-rsm/issues"
   },
-  "homepage": "https://github.com/strophe/strophejs-plugin-rsm#readme"
+  "homepage": "https://github.com/strophe/strophejs-plugin-rsm#readme",
+  "devDependencies": {
+    "rollup": "^0.45.0"
+  },
+  "peerDependencies": {
+    "strophe.js": ">=1.2"
+  }
 }
