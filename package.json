@@ -1,6 +1,6 @@
 {
   "name": "strophejs-plugin-rsm",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A strophe.js plugin for XEP-0059 Result Set Management",
   "main": "lib/strophe.rsm.js",
   "scripts": {
